@@ -12,13 +12,20 @@ let dy = 2;
 
 const dvd_width = 100;
 const dvd_height = 100;
+let dvd_fill = 'pink';
+const dvd_colours = ['pink', 'red', 'orange', 'blue', 'yellow', 'green'];
 
 const draw_dvd = function () {
   ctx.beginPath();
   ctx.rect(x, y, dvd_width, dvd_height);
-  ctx.fillStyle = 'pink';
+  ctx.fillStyle = dvd_fill;
   ctx.fill();
   ctx.closePath;
+};
+
+const dvd_change_color = function () {
+  let color = dvd_colours[Math.floor(Math.random() * dvd_colours.length)];
+  dvd_fill = color;
 };
 
 function draw() {
@@ -28,10 +35,12 @@ function draw() {
 
   if (0 > x || ctx.canvas.width < x + dvd_width) {
     dx = -dx;
+    dvd_change_color();
   }
 
   if (0 > y || ctx.canvas.height < y + dvd_height) {
     dy = -dy;
+    dvd_change_color();
   }
 
   x += dx;
