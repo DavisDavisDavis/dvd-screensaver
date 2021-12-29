@@ -1,4 +1,4 @@
-()[https://thumbs.gfycat.com/BackJitteryCuttlefish-max-1mb.gif]
+!img[https://thumbs.gfycat.com/BackJitteryCuttlefish-max-1mb.gif]
 
 # DVD SCREENSAVER
 
