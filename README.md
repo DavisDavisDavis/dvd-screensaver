@@ -1,6 +1,6 @@
-INSERT MANDATORY GIF
+()[https://thumbs.gfycat.com/BackJitteryCuttlefish-max-1mb.gif]
 
-# Project Title
+# DVD SCREENSAVER
 
 Text about the project. This would also be a great place to link the game on Netlify.
 
