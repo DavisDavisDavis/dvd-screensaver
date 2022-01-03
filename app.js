@@ -28,13 +28,20 @@ const dvd_change_color = function () {
   dvd_fill = color;
 };
 
+const dvd_direction = function () {
+  return Math.floor(Math.random() * (3 - 1.5)) + 1.5;
+};
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   draw_dvd();
 
   if (0 > x || ctx.canvas.width < x + dvd_width) {
+    console.log('direction: ' + dvd_direction());
     dx = -dx;
+    console.log('dx: ' + dx);
+
     dvd_change_color();
   }
 
