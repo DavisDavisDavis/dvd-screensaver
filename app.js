@@ -29,24 +29,35 @@ const dvd_change_color = function () {
 };
 
 const dvd_direction = function () {
-  return Math.floor(Math.random() * (3 - 1.5)) + 1.5;
+  return (Math.floor(Math.random() * (200 - 150)) + 150) / 100;
+  // if (dx < 0) {
+  //   dx = -dx;
+  // }
 };
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   draw_dvd();
-
   if (0 > x || ctx.canvas.width < x + dvd_width) {
     console.log('direction: ' + dvd_direction());
-    dx = -dx;
+    dx = -dvd_direction();
     console.log('dx: ' + dx);
 
+    if (0 > x) {
+      dx = dvd_direction();
+      dvd_change_color();
+    }
     dvd_change_color();
   }
 
   if (0 > y || ctx.canvas.height < y + dvd_height) {
-    dy = -dy;
+    dy = -dvd_direction();
+    if (0 > y) {
+      dy = dvd_direction();
+      dvd_change_color();
+    }
+
     dvd_change_color();
   }
 
