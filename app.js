@@ -14,6 +14,17 @@ const dvd_width = 100;
 const dvd_height = 100;
 let dvd_fill = 'pink';
 const dvd_colours = ['pink', 'red', 'orange', 'blue', 'yellow', 'green'];
+// document.addEventListener('mousemove', mouse_position_handler, false);
+const h1 = document.querySelector('body h1');
+h1.textContent = 'uwu';
+
+const input_field = document.querySelector("input[type='text']");
+input_field.addEventListener('keyup', () => {
+  h1.textContent = input_field.value;
+});
+
+ctx.font = '30px Arial';
+ctx.fillText(input, 50, 50);
 
 const draw_dvd = function () {
   ctx.beginPath();
@@ -40,9 +51,7 @@ function draw() {
 
   draw_dvd();
   if (0 > x || ctx.canvas.width < x + dvd_width) {
-    console.log('direction: ' + dvd_direction());
     dx = -dvd_direction();
-    console.log('dx: ' + dx);
 
     if (0 > x) {
       dx = dvd_direction();
@@ -66,3 +75,17 @@ function draw() {
 }
 
 setInterval(draw, 10);
+
+//Buggy mess
+
+// document.addEventListener('mousemove', (e) => {
+//   if (e.clientX > x && x + dvd_width > e.clientX) {
+//     dx = -dx;
+//     console.log('touch x');
+//   }
+
+//   if (e.clientY > y && y + dvd_height > e.clientY) {
+//     dy = -dy;
+//     console.log('touch y');
+//   }
+// });
