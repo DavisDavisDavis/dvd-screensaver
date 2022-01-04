@@ -91,14 +91,12 @@ setInterval(draw, 10);
 
 // document.addEventListener('mousemove', mouse_position_handler, false);
 
-// document.addEventListener('mousemove', (e) => {
-//   if (e.clientX > x && x + dvd_width > e.clientX) {
-//     dx = -dx;
-//     console.log('touch x');
-//   }
+document.addEventListener('mousemove', (e) => {
+  if (e.clientX > x && x + dvd_width > e.clientX) {
+    dx = -dx;
+  }
 
-//   if (e.clientY > y && y + dvd_height > e.clientY) {
-//     dy = -dy;
-//     console.log('touch y');
-//   }
-// });
+  if (e.clientY > y && y + dvd_height > e.clientY) {
+    dy = -dy;
+  }
+});

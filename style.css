@@ -2,12 +2,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --backround: white;
+}
+
 body {
   width: 100vw;
   height: 100vh;
   margin: 0;
 
-  background: white;
+  background: var(--backround);
 
   display: flex;
   justify-content: center;
@@ -16,8 +20,8 @@ body {
 }
 
 canvas {
-  width: 80%;
-  height: 50%;
+  width: 500px;
+  height: 500px;
 
   background: black;
 }
