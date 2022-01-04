@@ -2,11 +2,12 @@
 
 # DVD SCREENSAVER
 
-Text about the project. This would also be a great place to link the game on Netlify.
+Make your very own DVD screen saver 📀
+https://dwd-screensaver.netlify.app/
 
 # Installation
 
-Add the installation instructions.
+Download repo and run [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 # Code Review
 
