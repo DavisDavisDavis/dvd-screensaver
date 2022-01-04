@@ -11,9 +11,10 @@ let dx = 2;
 let dy = 2;
 
 const h1 = document.querySelector('body h1');
-h1.textContent = 'uwu';
 h1.addEventListener('click', () => {
-  h1.style.transform.rotate = '360';
+  h1.style.transform.rotate = '1.5turn';
+  h1.style.color = dvd_fill;
+  console.log('click');
 });
 
 let dvd_width = 100;
@@ -26,12 +27,12 @@ input_field.addEventListener('keyup', () => {
 const dvd_text = function () {
   ctx.font = '40px Arial';
   ctx.fillText(input_field.value, x, y);
+  ctx.fillStyle = dvd_fill;
 };
 
 const draw_dvd = function () {
   ctx.beginPath();
   ctx.rect(x, y, dvd_width, dvd_height);
-  ctx.fillStyle = dvd_fill;
   ctx.fill();
   ctx.closePath;
 };

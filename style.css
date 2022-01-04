@@ -25,3 +25,7 @@ canvas {
 form {
   margin: 2rem;
 }
+
+h1 {
+  transition: 0.2s;
+}
