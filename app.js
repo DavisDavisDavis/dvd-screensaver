@@ -20,11 +20,14 @@ h1.textContent = 'uwu';
 
 const input_field = document.querySelector("input[type='text']");
 input_field.addEventListener('keyup', () => {
-  h1.textContent = input_field.value;
+  let input = input_field.value;
+  return input;
 });
 
-ctx.font = '30px Arial';
-ctx.fillText(input, 50, 50);
+const dvd_text = function () {
+  ctx.font = '30px Arial';
+  ctx.fillText(input, 50, 50);
+};
 
 const draw_dvd = function () {
   ctx.beginPath();
@@ -50,6 +53,8 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   draw_dvd();
+  dvd_text();
+
   if (0 > x || ctx.canvas.width < x + dvd_width) {
     dx = -dvd_direction();
 
