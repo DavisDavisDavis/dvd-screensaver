@@ -10,23 +10,18 @@ let y = 50;
 let dx = 2;
 let dy = 2;
 
-const dvd_width = 100;
-const dvd_height = 100;
-let dvd_fill = 'pink';
-const dvd_colours = ['pink', 'red', 'orange', 'blue', 'yellow', 'green'];
-// document.addEventListener('mousemove', mouse_position_handler, false);
 const h1 = document.querySelector('body h1');
 h1.textContent = 'uwu';
-
-const input_field = document.querySelector("input[type='text']");
-input_field.addEventListener('keyup', () => {
-  let input = input_field.value;
-  return input;
+h1.addEventListener('click', () => {
+  h1.style.transform.rotate = '360';
 });
 
+const input_field = document.querySelector("input[type='text']");
+input_field.addEventListener('keyup', () => {});
+
 const dvd_text = function () {
-  ctx.font = '30px Arial';
-  ctx.fillText(input, 50, 50);
+  ctx.font = '40px Arial';
+  ctx.fillText(input_field.value, x, y);
 };
 
 const draw_dvd = function () {
@@ -36,6 +31,11 @@ const draw_dvd = function () {
   ctx.fill();
   ctx.closePath;
 };
+
+let dvd_width = 210 + ctx.measureText(input_field.value).width;
+const dvd_height = 50;
+let dvd_fill = 'pink';
+const dvd_colours = ['pink', 'red', 'orange', 'blue', 'yellow', 'green'];
 
 const dvd_change_color = function () {
   let color = dvd_colours[Math.floor(Math.random() * dvd_colours.length)];
@@ -52,8 +52,8 @@ const dvd_direction = function () {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  draw_dvd();
   dvd_text();
+  draw_dvd();
 
   if (0 > x || ctx.canvas.width < x + dvd_width) {
     dx = -dvd_direction();
@@ -82,6 +82,8 @@ function draw() {
 setInterval(draw, 10);
 
 //Buggy mess
+
+// document.addEventListener('mousemove', mouse_position_handler, false);
 
 // document.addEventListener('mousemove', (e) => {
 //   if (e.clientX > x && x + dvd_width > e.clientX) {
