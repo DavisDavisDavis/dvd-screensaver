@@ -10,18 +10,39 @@ let y = 50;
 let dx = 2;
 let dy = 2;
 
+let dvd_width = 100;
+const dvd_height = 50;
+let dvd_fill = 'pink';
+const dvd_colours = ['pink', 'red', 'orange', 'blue', 'yellow', 'green'];
+
+//Loops through each colour on click
+let index = 0;
 const h1 = document.querySelector('body h1');
 h1.addEventListener('click', () => {
   h1.style.transform.rotate = '1.5turn';
-  h1.style.color = dvd_fill;
-  console.log('click');
+  h1.style.color = dvd_colours[index];
+  index++;
+
+  if (index >= dvd_colours.length) {
+    index = 0;
+  }
 });
 
-let dvd_width = 100;
-
+//Adds width the dvd on each keystroke
 const input_field = document.querySelector("input[type='text']");
 input_field.addEventListener('keyup', () => {
   dvd_width = ctx.measureText(input_field.value).width;
+});
+
+//Makes the dvd move depending on the mouse move but its a but random... 😢
+document.addEventListener('mousemove', (e) => {
+  if (e.clientX > x && x + dvd_width > e.clientX) {
+    dx = -dx;
+  }
+
+  if (e.clientY > y && y + dvd_height > e.clientY) {
+    dy = -dy;
+  }
 });
 
 const dvd_text = function () {
@@ -39,10 +60,6 @@ const draw_dvd = function () {
 
 console.log(ctx.measureText(input_field.value).width);
 
-const dvd_height = 50;
-let dvd_fill = 'pink';
-const dvd_colours = ['pink', 'red', 'orange', 'blue', 'yellow', 'green'];
-
 const dvd_change_color = function () {
   let color = dvd_colours[Math.floor(Math.random() * dvd_colours.length)];
   dvd_fill = color;
@@ -50,9 +67,6 @@ const dvd_change_color = function () {
 
 const dvd_direction = function () {
   return (Math.floor(Math.random() * (200 - 150)) + 150) / 100;
-  // if (dx < 0) {
-  //   dx = -dx;
-  // }
 };
 
 function draw() {
@@ -86,17 +100,3 @@ function draw() {
 }
 
 setInterval(draw, 10);
-
-//Buggy mess
-
-// document.addEventListener('mousemove', mouse_position_handler, false);
-
-document.addEventListener('mousemove', (e) => {
-  if (e.clientX > x && x + dvd_width > e.clientX) {
-    dx = -dx;
-  }
-
-  if (e.clientY > y && y + dvd_height > e.clientY) {
-    dy = -dy;
-  }
-});
