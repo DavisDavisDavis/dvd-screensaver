@@ -1,11 +1,10 @@
 @font-face {
-  font-family: Roboto;
-  src: local('Roboto'), url(/fonts/Roboto-Bold.woff2) format('woff2'),
+  font-family: 'Roboto';
+  src: local('sans-serif'), url(/fonts/Roboto-Bold.woff2) format('woff2'),
     url(/fonts/Roboto-Bold.woff) format('woff');
 }
 x * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
 }
 
 :root {
@@ -23,11 +22,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  font-family: 'Roboto';
 }
 
 canvas {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
 
   background: black;
 }
@@ -38,4 +39,14 @@ form {
 
 h1 {
   transition: 0.2s;
+}
+
+@media only screen and (max-width: 700) {
+  canvas {
+    width: 200px;
+  }
+
+  body {
+    background: black;
+  }
 }
