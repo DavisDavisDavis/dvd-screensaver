@@ -16,8 +16,12 @@ h1.addEventListener('click', () => {
   h1.style.transform.rotate = '360';
 });
 
+let dvd_width = 100;
+
 const input_field = document.querySelector("input[type='text']");
-input_field.addEventListener('keyup', () => {});
+input_field.addEventListener('keyup', () => {
+  dvd_width = ctx.measureText(input_field.value).width;
+});
 
 const dvd_text = function () {
   ctx.font = '40px Arial';
@@ -32,7 +36,8 @@ const draw_dvd = function () {
   ctx.closePath;
 };
 
-let dvd_width = 210 + ctx.measureText(input_field.value).width;
+console.log(ctx.measureText(input_field.value).width);
+
 const dvd_height = 50;
 let dvd_fill = 'pink';
 const dvd_colours = ['pink', 'red', 'orange', 'blue', 'yellow', 'green'];
